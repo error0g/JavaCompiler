@@ -257,6 +257,7 @@ public class Main {
                 if (option.process(optionHelper, flag, operand))
                     return null;
             } else {
+                //添加filenames
                 if (option.process(optionHelper, flag))
                     return null;
             }
@@ -520,6 +521,7 @@ public class Main {
                 for (JavaFileObject fo : otherFiles)
                     fileObjects = fileObjects.prepend(fo);
             }
+            // 开始编译
             comp.compile(fileObjects,
                          classnames.toList(),
                          processors);
